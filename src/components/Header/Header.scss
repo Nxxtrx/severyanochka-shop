@@ -1,0 +1,129 @@
+@import '../../utils/colors';
+
+.header{
+  display: flex;
+  align-items: center;
+  max-width: 1208px;
+  justify-content: space-between;
+  margin: 0 auto;
+  height: 72px;
+  gap: 30px;
+}
+
+.header__logo-container{
+  display: flex;
+  align-items: center;
+  width: 152px;
+  justify-content: space-between;
+}
+
+
+.catalog{
+  background-color: $main-secondary;
+  width: 140px;
+  height: 40px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.catalog__button{
+  background-image: url('../../images/menu-img.svg');
+  width: 24px;
+  height: 24px;
+  background-color: inherit;
+  border: none;
+  margin-left: 8px;
+}
+
+.catalog__span{
+  font-weight: 400;
+  font-size: 16px;
+  color: $main-onprimary;
+  line-height: 150%;
+  padding-right: 23px;
+}
+
+.search{
+  display: flex;
+  align-items: center;
+  width: 374px;
+  height: 40px;
+  border: 1px solid $main-secondary;
+  border-radius: 4px;
+  justify-content: space-between;
+}
+
+.search__input{
+  border: none;
+  width: 316px;
+  margin-left: 8px;
+  outline: none;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+}
+
+.search__img{
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
+}
+
+.menu__list{
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  margin: 0;
+  padding: 0;
+}
+
+.menu__item{
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.menu__image{
+  width: 24px;
+  height: 24px;
+}
+
+.menu__text{
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+.user{
+  display: flex;
+  align-items: center;
+  width: 217px;
+}
+
+.user__image{
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  border-radius: 100px;
+  margin-left: 16px;
+  margin-right: 10px;
+}
+
+.user__name{
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.user__button{
+  border: none;
+  background-color: inherit;
+  width: 24px;
+  height: 24px;
+  margin-left: 26px;
+}

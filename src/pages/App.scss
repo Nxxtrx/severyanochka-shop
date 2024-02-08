@@ -1,0 +1,29 @@
+
+// Colors
+@import '../utils/colors';
+
+.page{
+  font-family: "Rubik", sans-serif;
+}
+
+.main{
+  background-color: $main---bgpage;
+  padding-top: 4px;
+}
+
+
+.main-banner{
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-height: 200px;
+  background-image: url('../images/main-banner-delivery-atoms.png');
+  background-size: cover;
+}
+
+.eewwwww{
+  background-image: url('../images/header-logo.svg');
+  width: 100px;
+  height: 100px;
+}

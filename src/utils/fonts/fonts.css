@@ -1,0 +1,27 @@
+@font-face {
+  src: url(./Rubik-Bold.woff) format('woff'),
+    url(./Rubik-Bold.ttf) format('truetype');
+  font-family: 'Rubick';
+  font-weight: 700;
+}
+
+@font-face {
+  src: url(./Rubik-Medium.woff) format('woff'),
+    url(./Rubik-Medium.ttf) format('truetype');
+  font-family: 'Rubick';
+  font-weight: 500;
+}
+
+@font-face {
+  src: url(./Rubik-Regular.woff) format('woff'),
+    url(./Rubik-Regular.ttf) format('truetype');
+  font-family: 'Rubick';
+  font-weight: 400;
+}
+
+@font-face {
+  src: url(./Rubik-Light.woff) format('woff'),
+    url(./Rubik-Light.ttf) format('truetype');
+  font-family: 'Rubick';
+  font-weight: 300;
+}
