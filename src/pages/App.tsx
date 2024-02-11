@@ -20,7 +20,7 @@ export default function App() {
     });
 
     anime({
-      targets: 'svg path',
+      targets: '.header__title',
       duration: 3000,
       easing: 'linear',
       fillOpacity: {

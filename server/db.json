@@ -1,0 +1,156 @@
+{
+  "product": [
+    {
+      "id": 1,
+      "type": "sale",
+      "name": "Г/Ц Блинчики с мясом вес, Россия",
+      "url": "https://s1.hostingkartinok.com/uploads/images/2012/04/72d4ab8ad4dbce618c70c26ed606cc09.png",
+      "price": 50,
+      "rating": 1
+    },
+    {
+      "id": 2,
+      "type": "sale",
+      "name": "Молоко ПРОСТОКВАШИНО паст. питьевое цельное отборное",
+      "url": "https://rskrf.ru/upload/iblock/93e/q59o0o8t76wfz81rccaqfwljriokiwpp.jpg",
+      "price": 50,
+      "rating": 2
+    },
+    {
+      "id": 3,
+      "type": "sale",
+      "name": "Колбаса сырокопченая МЯСНАЯ ИСТОРИЯ Сальчичон",
+      "url": "https://catherineasquithgallery.com/uploads/posts/2021-03/1614587035_50-p-kolbasa-na-belom-fone-93.jpg",
+      "price": 50,
+      "rating": 3
+    },
+    {
+      "id": 4,
+      "type": "sale",
+      "name": "Сосиски вареные МЯСНАЯ ИСТОРИЯ Молочные и С сыром",
+      "url": "https://cdn1.ozone.ru/s3/multimedia-m/6758237386.jpg",
+      "price": 50,
+      "rating": 4
+    },
+    {
+      "id": 6,
+      "type": "sale",
+      "name": "Комбайн КЗС-1218 «ДЕСНА-ПОЛЕСЬЕ GS12»",
+      "url": "https://miratorg.ru/upload/iblock/811/bliny_cherry.jpg",
+      "price": 50,
+      "rating": 5
+    },
+    {
+      "id": 7,
+      "type": "sale",
+      "name": "Г/Ц Блинчики с мясом вес, Россия",
+      "url": "https://miratorg.ru/upload/iblock/811/bliny_cherry.jpg",
+      "price": 50,
+      "rating": 1
+    },
+    {
+      "id": 8,
+      "type": "sale",
+      "name": "Г/Ц Блинчики с мясом вес, Россия",
+      "url": "https://miratorg.ru/upload/iblock/811/bliny_cherry.jpg",
+      "price": 50,
+      "rating": 1
+    },
+    {
+      "id": 9,
+      "type": "sale",
+      "name": "Г/Ц Блинчики с мясом вес, Россия",
+      "url": "https://miratorg.ru/upload/iblock/811/bliny_cherry.jpg",
+      "price": 50,
+      "rating": 1
+    },
+    {
+      "id": 10,
+      "type": "new",
+      "name": "Г/Ц Блинчики с мясом вес, Россия",
+      "url": "https://s1.hostingkartinok.com/uploads/images/2012/04/72d4ab8ad4dbce618c70c26ed606cc09.png",
+      "price": 50,
+      "rating": 5
+    },
+    {
+      "id": 11,
+      "type": "new",
+      "name": "Г/Ц Блинчики с мясом вес, Россия",
+      "url": "https://rskrf.ru/upload/iblock/93e/q59o0o8t76wfz81rccaqfwljriokiwpp.jpg",
+      "price": 50,
+      "rating": 4
+    },
+    {
+      "id": 12,
+      "type": "new",
+      "name": "Г/Ц Блинчики с мясом вес, Россия",
+      "url": "https://catherineasquithgallery.com/uploads/posts/2021-03/1614587035_50-p-kolbasa-na-belom-fone-93.jpg",
+      "price": 50,
+      "rating": 3
+    },
+    {
+      "id": 13,
+      "type": "new",
+      "name": "Г/Ц Блинчики с мясом вес, Россия",
+      "url": "https://cdn1.ozone.ru/s3/multimedia-m/6758237386.jpg",
+      "price": 50,
+      "rating": 2
+    },
+    {
+      "id": 14,
+      "type": "new",
+      "name": "Г/Ц Блинчики с мясом вес, Россия",
+      "url": "https://miratorg.ru/upload/iblock/811/bliny_cherry.jpg",
+      "price": 50,
+      "rating": 1
+    },
+    {
+      "id": 15,
+      "type": "new",
+      "name": "Г/Ц Блинчики с мясом вес, Россия",
+      "url": "https://miratorg.ru/upload/iblock/811/bliny_cherry.jpg",
+      "price": 50,
+      "rating": 1
+    },
+    {
+      "id": 16,
+      "type": "new",
+      "name": "Г/Ц Блинчики с мясом вес, Россия",
+      "url": "https://miratorg.ru/upload/iblock/811/bliny_cherry.jpg",
+      "price": 50,
+      "rating": 1
+    },
+    {
+      "id": 17,
+      "type": "new",
+      "name": "Г/Ц Блинчики с мясом вес, Россия",
+      "url": "https://miratorg.ru/upload/iblock/811/bliny_cherry.jpg",
+      "price": 50,
+      "rating": 1
+    },
+    {
+      "id": 18,
+      "type": "new",
+      "name": "Г/Ц Блинчики с мясом вес, Россия",
+      "url": "https://miratorg.ru/upload/iblock/811/bliny_cherry.jpg",
+      "price": 50,
+      "rating": 1
+    },
+    {
+      "id": 19,
+      "type": "new",
+      "name": "Г/Ц Блинчики с мясом вес, Россия",
+      "url": "https://miratorg.ru/upload/iblock/811/bliny_cherry.jpg",
+      "price": 50,
+      "rating": 1
+    },
+    {
+      "id": 20,
+      "type": "new",
+      "name": "Г/Ц Блинчики с мясом вес, Россия",
+      "url": "https://miratorg.ru/upload/iblock/811/bliny_cherry.jpg",
+      "price": 50,
+      "rating": 1
+    }
+  ]
+}

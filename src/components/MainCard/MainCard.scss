@@ -1,0 +1,113 @@
+@import "../../utils/colors";
+
+.main-cards__card{
+  display: flex;
+  flex-direction: column;
+  max-width: 272px;
+  position: relative;
+  background-color: #fff;
+  box-shadow: 1px 2px 4px 0 rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+
+}
+
+.main-cards__image{
+  width: 272px;
+  height: 160px;
+  object-fit: contain;
+}
+
+.main-cards__like{
+  background-image: url('../../images/card-like.svg');
+  border: none;
+  background-color: $grayscale---lightest;
+  width: 32px;
+  height: 32px;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 4px;
+  opacity: 0.5;
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  cursor: pointer;
+}
+
+.main-cards__sale{
+  background-color: $main---primary;
+  width: 56px;
+  height: 32px;
+  text-align: center;
+  border-radius: 4px;
+  position: absolute;
+  bottom: calc(349px - 157px);
+  left: 8px;
+}
+
+.main-cards__sale{
+  span{
+    color: #fff;
+    display: block;
+    margin-top: 8px;
+  }
+}
+
+.main-cards__price-container{
+  display: flex;
+  justify-content: space-between;
+}
+
+.main-cards__price{
+  display: flex;
+  flex-direction: column;
+  color: $main-onsurface;
+  font-size: 18px;
+  font-weight: 700;
+  margin-left: 8px;
+  margin-right: 8px;
+  min-height: 37px;
+}
+
+.main-cards__price{
+  span{
+    color: $grayscale---light;
+    font-size: 12px;
+    font-weight: 400;
+    margin-top: 2px;
+  }
+}
+
+.main-cards__price_type_usually{
+  align-items: flex-end;
+  color: $grayscale---hardest;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+.main-cards__name{
+  font-size: 16px;
+  font-weight: 400;
+  color: $main-onsurface;
+  line-height: 1.5;
+  margin: 0 8px;
+  min-height: 48px;
+}
+
+.main-cards__rating{
+  margin: 0 8px;
+}
+
+.main-cards__btn{
+  border: 1px solid $main-secondary;
+  background-color: inherit;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  color: $main-secondary;
+  height: 40px;
+  margin-bottom: 8px;
+  margin-left: 8px;
+  margin-right: 8px;
+  border-radius: 4px;
+  cursor: pointer;
+}

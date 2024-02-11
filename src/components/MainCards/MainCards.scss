@@ -1,0 +1,42 @@
+@import "../../utils/colors";
+
+.main-cards{
+  max-width: 1208px;
+  margin: 80px auto 0;
+}
+
+.main-cards__title-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.main-cards__title{
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1.5;
+  color: $main-onsurface;
+  margin: 0;
+}
+
+.main-cards__link{
+  text-decoration: none;
+  color: $grayscale---hardest;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.main-cards__link{
+  img{
+    margin-left: 20px;
+  }
+}
+
+.main-cards__container{
+  margin-top: 40px;
+  padding-left: 0;
+  padding-bottom: 40px;
+  display: flex;
+  justify-content: space-between;
+}
+

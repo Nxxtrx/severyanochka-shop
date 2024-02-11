@@ -9,6 +9,7 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
   },
   mode: 'development',
+  devtool: 'inline-source-map',
   resolve: {
     extensions: ['.ts', '.tsx', '.js'],
   },
@@ -33,12 +34,13 @@ module.exports = {
     static: path.resolve(__dirname, './dist'),
     compress: true,
     port: 8080,
-    open: true
+    open: true,
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: './public/index.html' 
+      template: './public/index.html',
+      // overlay: true,
     }),
     new CleanWebpackPlugin(),
-  ] 
+  ],
 };
