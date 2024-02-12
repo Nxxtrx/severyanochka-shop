@@ -1,0 +1,86 @@
+@import '../../utils/colors';
+
+.footer{
+  background-color: #f9f4e2;
+  background-image: url('../../images/footer-bg.svg');
+  height: 126px;
+}
+
+
+.footer__container{
+  margin: 0 auto;
+  max-width: 1210px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 24px;
+}
+
+.footer__logo{
+  width: 64px;
+  height: 44px;
+}
+
+.footer__page-link{
+  display: flex;
+}
+
+.footer__list{
+  width: 637px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer__item{
+  list-style-type: none;
+}
+
+.footer__link{
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.5;
+  color: $main-onsurface;
+  text-decoration: none;
+}
+
+.footer__socials{
+  display: flex;
+  width: 336px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer__socials-container{
+  display: flex;
+  justify-content: space-between;
+  width: 144px;
+  padding: 0;
+}
+
+.footer__social-item{
+  list-style-type: none;
+}
+
+.footer__social-image{
+  width: 24px;
+  height: 24px;
+}
+
+.footer__phone-container{
+  display: flex;
+  align-items: center;
+  
+}
+
+.footer__phone-image{
+  width: 24px;
+  height: 24px;
+  margin-right: 1px;
+}
+
+.footer__phone-number{
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  color: $main-onsurface;
+}

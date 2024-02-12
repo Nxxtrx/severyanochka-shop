@@ -20,8 +20,6 @@ interface CardListType {
 
 const MainCards:FunctionComponent<CardListType> = ({title, linkTitle, data}) => {
 
-
-  
   // const dispatch = useAppDispatch()
   // const {food} = useAppSelector(state => state.foodReducer)
   // console.log(food)
@@ -29,7 +27,6 @@ const MainCards:FunctionComponent<CardListType> = ({title, linkTitle, data}) => 
   // useEffect(() => {
   //   dispatch(fetchFood())
   // },[])
-
 
   return (
     <div className='main-cards'>

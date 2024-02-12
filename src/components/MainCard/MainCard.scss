@@ -8,7 +8,12 @@
   background-color: #fff;
   box-shadow: 1px 2px 4px 0 rgba(0, 0, 0, 0.1);
   border-radius: 4px;
+  transition: box-shadow .3s ease-in-out;
+  cursor: pointer;
+}
 
+.main-cards__card:hover{
+  box-shadow: 4px 8px 16px 0 rgba(255, 102, 51, 0.2);
 }
 
 .main-cards__image{
@@ -110,4 +115,10 @@
   margin-right: 8px;
   border-radius: 4px;
   cursor: pointer;
+}
+
+.main-cards__btn:hover {
+  background-color: $main---primary;
+  color: $main-onprimary;
+  border: none;
 }

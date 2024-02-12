@@ -2,6 +2,7 @@ import React from 'react'
 import Banner from '../../components/Banner/Banner'
 import MainCards from '../../components/MainCards/MainCards'
 import { postAPI } from '../../services/PostServices'
+import SpecialEvent from '../../components/SpecialEvent/SpecialEvent'
 
 
 const MainContainers = () => {
@@ -21,6 +22,7 @@ const MainContainers = () => {
       {newFood && (
         <MainCards title='Новинки' linkTitle='Все новинки' data={newFood} />
       )}
+      <SpecialEvent />
     </main>
   )
 }

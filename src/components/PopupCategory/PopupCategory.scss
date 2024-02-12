@@ -1,0 +1,67 @@
+@import "../../utils/colors";
+
+
+
+.category-popup{
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: $main-onprimary;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.popup-opened{
+  display: block;
+  animation: opacity .2s ease;
+}
+
+.category-popup__container{
+  display: flex;
+  justify-content: space-between;
+  width: 1208px;
+  margin: 0 auto;
+}
+
+.category-popup__list{
+  padding: 0;
+  margin: 0;
+}
+
+.category-popup__item{
+  list-style-type: none;
+  margin-bottom: 24px;
+}
+
+.category-popup__link{
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.5;
+  color: $main-onsurface;
+  transition: color .3s ease;
+}
+
+.category-popup__link:hover{
+  color: $main---primary;
+}
+
+@keyframes opacity {
+0% {
+  opacity: 0;
+}
+25% {
+  opacity: .25;
+}
+50% {
+ opacity: .5;
+}
+75% {
+  opacity: .75;
+}
+100% {
+ opacity: 1;
+}
+}

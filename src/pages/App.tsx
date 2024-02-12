@@ -5,6 +5,7 @@ import '../utils/fonts/fonts.css'
 import '../utils/normalize.css'
 import './App.scss'
 import MainContainers from '../containers/MainContainers/MainContainers';
+import Footer from '../components/Footer/Footer';
 
 
 export default function App() {
@@ -38,6 +39,7 @@ export default function App() {
     <div className="page">
       <HeaderContainer />
       <MainContainers />
+      <Footer />
     </div>
   );
 }

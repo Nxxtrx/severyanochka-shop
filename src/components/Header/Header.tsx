@@ -5,6 +5,7 @@ import likeImage from '../../images/menu-item-like.svg'
 import orderImage from '../../images/menu-item-order.svg'
 import cartImage from '../../images/menu-item-cart.svg'
 import './Header.scss'
+import PopupCategory from '../PopupCategory/PopupCategory';
 
 interface HeaderProps {
   children: {
@@ -17,15 +18,17 @@ const Header:FunctionComponent<HeaderProps> = ({children}):JSX.Element => {
 
   const {childrenOne, childrenTwo} = children
 
+  const [isOpened, setIsOpened] = React.useState(false)
+
   return (
-    <header className="header">
+    <div className="header__container">
       <div className="header__logo-container">
         <img className="header__logo" src={headerLogo} alt="" />
         <HeaderTitle />
       </div>
       <div className="catalog">
-        <button className="catalog__button"></button>
-        <span className="catalog__span">Каталог</span>
+        <button className="catalog__button" onClick={() => setIsOpened(!isOpened)}><span className="catalog__span">Каталог</span></button>
+        
       </div>
       {childrenOne}
       <div className="menu">
@@ -45,7 +48,8 @@ const Header:FunctionComponent<HeaderProps> = ({children}):JSX.Element => {
         </ul>
       </div>
       {childrenTwo}
-    </header>
+      <PopupCategory isOpened={isOpened}/>
+    </div>
   );
 }
 

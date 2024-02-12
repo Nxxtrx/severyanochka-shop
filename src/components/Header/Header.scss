@@ -1,6 +1,6 @@
 @import '../../utils/colors';
 
-.header{
+.header__container{
   display: flex;
   align-items: center;
   max-width: 1208px;
@@ -8,6 +8,7 @@
   margin: 0 auto;
   height: 72px;
   gap: 30px;
+  // position: relative;
 }
 
 .header__logo-container{
@@ -26,23 +27,32 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+
 }
 
 .catalog__button{
+  border-radius: 4px;
   background-image: url('../../images/menu-img.svg');
-  width: 24px;
-  height: 24px;
+  background-repeat: no-repeat;
+  background-position: left 8px top 7px;
+  width: 100%;
+  height: 100%;
   background-color: inherit;
   border: none;
-  margin-left: 8px;
+  cursor: pointer;
+}
+
+.catalog:hover {
+  box-shadow: 4px 8px 16px 0 rgba(112, 192, 91, 0.2);
 }
 
 .catalog__span{
+  display: inline-block;
   font-weight: 400;
   font-size: 16px;
   color: $main-onprimary;
   line-height: 150%;
-  padding-right: 23px;
+  padding-left: 25px;
 }
 
 .search{

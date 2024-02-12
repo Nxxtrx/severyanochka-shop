@@ -1,0 +1,105 @@
+@import '../../utils/colors';
+
+.event {
+  max-width: 1208px;
+  margin: 0 auto;
+  padding-bottom: 50px;
+}
+
+.event__title {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.5;
+  color: $main-onsurface;
+  margin-top: 120px;
+  margin-bottom: 40px;
+}
+
+.event__container{
+  display: flex;
+  justify-content: space-between;
+}
+
+.event__card{
+  border-radius: 4px;
+  height: 200px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 584px;
+  cursor: pointer;
+  transition: box-shadow .3s ease;
+}
+
+.event__card_type_card:hover{
+  box-shadow: 0 8px 16px 0 rgba(202, 147, 96, 0.5);
+}
+
+.event__card_type_cart:hover{
+  box-shadow: 4px 8px 16px 0 rgba(112, 192, 91, 0.2)
+}
+
+.event__text{
+  max-width: 258px;
+}
+
+.event__text-title{
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 1.5;
+  color: $main-onsurface;
+  margin: 0 0 8px 0;
+}
+
+.event__description{
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  color: $main-onsurface;
+  margin: 0;
+}
+
+.event__card_type_card{
+  background-color: $main-primarymuted;
+  .event__image{
+    width: 207px;
+    height: 138px;
+    box-shadow: 0 8px 47px 0 rgba(200, 90, 53, 0.51);
+    transform: rotate(14deg);
+    border-radius: 10px;
+    animation: sway 2s ease-in-out infinite;
+  }
+}
+
+.event__card_type_cart{
+  background-color: $main-secondarymuted;
+  background-image: url('../../images/event-cart-details.svg');
+  background-repeat: no-repeat;
+  background-position: left 21px top 14px;
+  .event__image {
+    width: 193px;
+    height: 186px;
+    animation: bounce 2s ease-in-out infinite;
+  }
+}
+
+@keyframes sway {
+  0% {
+    transform: rotate(14deg);
+  }
+  50% {
+    transform: rotate(10deg);
+  }
+  100% {
+    transform: rotate(14deg);
+  }
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
