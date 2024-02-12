@@ -6,6 +6,8 @@ import orderImage from '../../images/menu-item-order.svg'
 import cartImage from '../../images/menu-item-cart.svg'
 import './Header.scss'
 import PopupCategory from '../PopupCategory/PopupCategory';
+import { Badge } from '@mui/material';
+import { useAppSelector } from '../../hooks/redux';
 
 interface HeaderProps {
   children: {
@@ -20,6 +22,10 @@ const Header:FunctionComponent<HeaderProps> = ({children}):JSX.Element => {
 
   const [isOpened, setIsOpened] = React.useState(false)
 
+  const cartArray = useAppSelector(state => state.foodReducer.cart)
+
+  const totalItemsInCart = cartArray.reduce((total, currentItem) => total + currentItem.count, 0);
+
   return (
     <div className="header__container">
       <div className="header__logo-container">
@@ -28,7 +34,6 @@ const Header:FunctionComponent<HeaderProps> = ({children}):JSX.Element => {
       </div>
       <div className="catalog">
         <button className="catalog__button" onClick={() => setIsOpened(!isOpened)}><span className="catalog__span">Каталог</span></button>
-        
       </div>
       {childrenOne}
       <div className="menu">
@@ -42,7 +47,9 @@ const Header:FunctionComponent<HeaderProps> = ({children}):JSX.Element => {
             <p className="menu__text">Заказы</p>
           </li>
           <li className="menu__item">
-            <img className="menu__image" src={cartImage} alt="" />
+            <Badge badgeContent={totalItemsInCart} color="success">
+              <img className="menu__image" src={cartImage} alt="" />
+            </Badge>
             <p className="menu__text">Корзина</p>
           </li>
         </ul>

@@ -14,7 +14,7 @@ import { IFood } from '../../models/IFood'
 interface CardListType {
   title: string,
   linkTitle: string,
-  data: IFood[]
+  data: IFood[],
 }
 
 
@@ -36,7 +36,7 @@ const MainCards:FunctionComponent<CardListType> = ({title, linkTitle, data}) => 
       </div>
       <ul className='main-cards__container'>
         {data.map((item) => 
-          <MainCard key={item.id} cardImage={item.url} title={title} price={item.price} name={item.name} rating={item.rating}/>
+          <MainCard key={item.id} cardImage={item.url} title={title} price={item.price} name={item.name} rating={item.rating} item={item}/>
         )}
       </ul>
     </div>

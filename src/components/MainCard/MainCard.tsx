@@ -1,16 +1,45 @@
-import React, { FC } from 'react'
+import React, { FC, useEffect, useState } from 'react'
 import BasicRating from '../Rating/Rating'
 import './MainCard.scss'
+import { useAppDispatch, useAppSelector } from '../../hooks/redux'
+import { addToCart, removeToCart } from '../../store/redusers/FoodSlice'
+import { IFood } from '../../models/IFood'
+import minusBtnImage from '../../images/cart-minus.svg'
+import plusBtnImage from '../../images/cart-plus.svg'
 
 export interface ProductType{
   cardImage: string,
   title: string,
   price: number,
   name: string,
-  rating: number
+  rating: number,
+  item: IFood
 }
 
-const MainCard: FC<ProductType> = ({cardImage, title, price, name, rating}) => {
+const MainCard: FC<ProductType> = ({cardImage, title, price, name, rating, item}) => {
+
+  const [countCart, setCountCart] = useState(0)
+
+  const dispatch = useAppDispatch()
+  const cartArray = useAppSelector(state => state.foodReducer.cart)
+
+  const handleAddToCart = (foodItem: IFood) => {
+    dispatch(addToCart(foodItem))
+  }
+
+  const handleRemoveToCart = (foodItem: IFood) => {
+    dispatch(removeToCart(foodItem))
+  }
+
+  const findItemToId = (id: string) => {
+    const item = cartArray.find((item) => item.id === id);
+    return item ? item.count : 0;
+  }
+
+  useEffect(() => {
+    setCountCart(findItemToId(item.id))
+  }, [handleAddToCart, handleRemoveToCart])
+
 
   return (
     <li className='main-cards__card'>
@@ -25,7 +54,16 @@ const MainCard: FC<ProductType> = ({cardImage, title, price, name, rating}) => {
       <div className='main-cards__rating'>
         <BasicRating defaultValue={rating}/>
       </div>
-      <button className='main-cards__btn'>В корзину</button>
+      {countCart === 0 
+      ? <button className='main-cards__btn' onClick={() => handleAddToCart(item)}>В корзину</button>
+      : <div className='main-cards__btn-container'>
+          <button onClick={() => handleRemoveToCart(item)} className='main-cards__btn-change'><img src={minusBtnImage} alt="" /></button>
+          <p className='main-cards__btn-count'>{findItemToId(item.id)}</p>
+          <button onClick={() => handleAddToCart(item)} className='main-cards__btn-change'><img src={plusBtnImage} alt="" /></button>
+        </div>
+      }
+      
+
     </li> 
   )
 }

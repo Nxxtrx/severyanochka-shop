@@ -2,6 +2,7 @@
   "name": "severyanochka-shop",
   "version": "1.0.0",
   "description": "",
+  "homepage": "https://severyanochka-shop.vercel.app/",
   "main": "index.tsx",
   "scripts": {
     "dev": "concurrently \"npm run start\" \"npm run server\"",

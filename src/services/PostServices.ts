@@ -21,5 +21,3 @@ export const postAPI = createApi({
   }),  
   })
 })
-
-console.log(postAPI)

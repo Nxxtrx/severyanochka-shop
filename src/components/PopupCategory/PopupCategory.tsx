@@ -7,8 +7,6 @@ interface PopupType {
 
 const PopupCategory:FC<PopupType> = ({isOpened}) => {
 
-  console.log(isOpened)
-
   return (
     <div className={`category-popup ${isOpened && 'popup-opened'}`}>
       <div className="category-popup__container">

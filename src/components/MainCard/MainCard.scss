@@ -122,3 +122,35 @@
   color: $main-onprimary;
   border: none;
 }
+
+.main-cards__btn-container{
+  height: 40px;
+  display: flex;
+  justify-content: space-between;
+  background-color: $main-secondary;
+  align-items: center;
+  border-radius: 4px;
+  margin-left: 8px;
+  margin-right: 8px;
+  margin-bottom: 8px;
+  cursor: auto;
+}
+
+.main-cards__btn-change{
+  background-color: inherit;
+  border: none;
+  padding: 0;
+  margin-left: 8px;
+  margin-right: 8px;
+  height: 24px;
+  width: 24px;
+  cursor: pointer;
+}
+
+.main-cards__btn-count{
+  margin: 0;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  color: $main-onprimary;
+}
