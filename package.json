@@ -8,7 +8,8 @@
     "dev": "concurrently \"npm run start\" \"npm run server\"",
     "build": "webpack",
     "start": "webpack serve",
-    "server": "json-server -w server/db.json"
+    "server": "json-server -w server/db.json",
+    "build:server": "concurrently \"npm run build\" \"npm run server\""
   },
   "keywords": [],
   "author": "",
