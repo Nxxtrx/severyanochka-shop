@@ -4,7 +4,7 @@ import { IFood } from "../models/IFood";
 
 export const postAPI = createApi({
   reducerPath: 'postAPI',
-  baseQuery: fetchBaseQuery({baseUrl: 'http://localhost:3000'}),
+  baseQuery: fetchBaseQuery({baseUrl: 'https://json-server-eight-nu.vercel.app'}),
   tagTypes: ['Post'],
   endpoints: (build) => ({
     fetchAllPosts: build.query<IFood[], {start: number, end: number, type: string}>({
