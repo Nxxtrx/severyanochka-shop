@@ -35,13 +35,7 @@ const Footer = () => {
         <div className='footer__socials'>
           <ul className='footer__socials-container'>
             <li className='footer__social-item'>
-              <a className='footer__social-link' href="#"><img className='footer__social-image' src={instLogo} alt="" /></a>
-            </li>
-            <li className='footer__social-item'>
               <a className='footer__social-link' href="#"><img className='footer__social-image'src={vkLogo} alt="" /></a>
-            </li>
-            <li className='footer__social-item'>
-              <a className='footer__social-link' href="#"><img className='footer__social-image' src={facebookLogo} alt="" /></a>
             </li>
             <li className='footer__social-item'>
               <a className='footer__social-link' href="#"><img className='footer__social-image' src={okLogo} alt="" /></a>

@@ -1,5 +1,6 @@
 import { IFood } from "./IFood";
 
 export interface ICart extends IFood {
-  count: number
+  count: number,
+  total: number
 }

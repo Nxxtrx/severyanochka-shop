@@ -7,6 +7,8 @@ import { useAppSelector, useAppDispatch } from '../../hooks/redux'
 import { fetchFood } from '../../store/redusers/ActionCreaters'
 import { addToCart } from '../../store/redusers/FoodSlice'
 import { IFood } from '../../models/IFood'
+import { CircularProgress } from '@mui/material'
+import Preloader from '../../components/Preloader/Preloader'
 
 
 
@@ -33,6 +35,7 @@ const MainContainers = () => {
   return (
     <main className="main">
       <Banner />
+      {isNewFoodLoading && isSaleFoodLoading && <Preloader />}
       {saleFood && (
         <MainCards title='Акции' linkTitle='Все акции' data={saleFood} />
       )}

@@ -27,8 +27,9 @@ export const foodSlice = createSlice({
       const existingFood = state.cart.find(item => item.id === action.payload.id);
       if (existingFood) {
         existingFood.count += 1;
+        existingFood.total += existingFood.price
       } else {
-        state.cart.push({ ...action.payload, count: 1 });
+        state.cart.push({ ...action.payload, count: 1, total: action.payload.price});
       }
     },
     removeToCart(state, action) {
@@ -36,6 +37,7 @@ export const foodSlice = createSlice({
       if (existingFood) {
         if (existingFood.count > 1) {
           existingFood.count -= 1;
+          existingFood.total -= existingFood.price
         } else {
           // Если count равен 1, удаляем товар из корзины
           state.cart = state.cart.filter(item => item.id !== action.payload.id);

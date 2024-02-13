@@ -8,6 +8,7 @@ import './Header.scss'
 import PopupCategory from '../PopupCategory/PopupCategory';
 import { Badge } from '@mui/material';
 import { useAppSelector } from '../../hooks/redux';
+import { Link } from 'react-router-dom';
 
 interface HeaderProps {
   children: {
@@ -28,10 +29,10 @@ const Header:FunctionComponent<HeaderProps> = ({children}):JSX.Element => {
 
   return (
     <div className="header__container">
-      <div className="header__logo-container">
+      <Link to='/' className="header__logo-container">
         <img className="header__logo" src={headerLogo} alt="" />
         <HeaderTitle />
-      </div>
+      </Link>
       <div className="catalog">
         <button className="catalog__button" onClick={() => setIsOpened(!isOpened)}><span className="catalog__span">Каталог</span></button>
       </div>
@@ -50,7 +51,7 @@ const Header:FunctionComponent<HeaderProps> = ({children}):JSX.Element => {
             <Badge badgeContent={totalItemsInCart} color="success">
               <img className="menu__image" src={cartImage} alt="" />
             </Badge>
-            <p className="menu__text">Корзина</p>
+            <Link to='/cart' className="menu__text">Корзина</Link>
           </li>
         </ul>
       </div>

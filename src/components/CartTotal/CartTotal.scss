@@ -1,0 +1,126 @@
+@import '../../utils/colors';
+
+.cart__item-container{
+  display: flex;
+  justify-content: space-between;
+}
+
+.total{
+  max-width: 272px;
+}
+
+.total__bonus{
+  display: flex;
+  flex-wrap: wrap;
+  border-bottom: 2px solid $grayscale---lightest;
+
+  .total__bonus-span {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 1.5;
+    color: $main-onsurface;
+    margin-top: 20px;
+    margin-bottom: 0;
+    margin-top: 5px;
+  }
+  p{
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.5;
+    color: $grayscale---hard; 
+    margin-top: 20px; 
+    margin-bottom: 24px;
+  }
+}
+
+.total__sum-container{
+  border-bottom: 2px solid $grayscale---lightest;
+  padding-top: 14px;
+  padding-bottom: 24px;
+  p{
+    margin: 0;
+    margin-top: 10px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.5;
+    color: $grayscale---hard;
+    
+  }
+  span{
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.5;
+    color: $main-onsurface;
+    float: right; 
+  }
+  .total__sale{
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.5;
+    color: $main---primary;
+  }
+}
+
+.total__sum-total{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  color: $grayscale---hard;  
+  span{
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 1.5;
+    color: $main-onsurface; 
+  }
+}
+
+.total__take-bonus{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.5;
+  color: $main-secondary;
+  img{
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+  }
+  span{
+    font-weight: 700
+  }
+}
+
+.total__min-sum {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.5;
+  color: $main-onprimary;
+  background-color: $pallete-error;
+  border-radius: 4px;
+  padding: 3px 8px;
+  text-align: center;
+  width: fit-content;
+  margin: 24px auto 0;
+}
+
+.total__btn {
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 1.5;
+  text-align: center;
+  color: $main---primary;
+  border-radius: 4px;
+  padding: 16px;
+  background-color: $main-primarymuted;
+  border: none;
+  width: 100%;
+  margin-top: 16px;
+}
+
+
+

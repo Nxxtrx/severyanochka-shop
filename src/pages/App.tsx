@@ -6,6 +6,8 @@ import '../utils/normalize.css'
 import './App.scss'
 import MainContainers from '../containers/MainContainers/MainContainers';
 import Footer from '../components/Footer/Footer';
+import { Route, Routes } from 'react-router-dom';
+import CartContainer from '../containers/CartContainer/CartContainer';
 
 
 export default function App() {
@@ -38,7 +40,10 @@ export default function App() {
   return (
     <div className="page">
       <HeaderContainer />
-      <MainContainers />
+      <Routes >
+        <Route path='/' element={<MainContainers />}/>
+        <Route path='/cart' element={<CartContainer />}/>
+      </Routes>
       <Footer />
     </div>
   );

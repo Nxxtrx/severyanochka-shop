@@ -7,6 +7,7 @@ module.exports = {
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist'),
+    publicPath: '/',
   },
   mode: 'development',
   devtool: 'inline-source-map',
@@ -33,6 +34,7 @@ module.exports = {
   devServer: {
     static: path.resolve(__dirname, './dist'),
     compress: true,
+    historyApiFallback: true,
     port: 8080,
     open: true,
   },
