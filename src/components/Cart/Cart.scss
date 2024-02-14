@@ -19,8 +19,11 @@
 }
 
 .cart__list-container{
-  max-width: 876px;
+  width: 876px;
+}
 
+.cart__text-container{
+  // min-width: 536px
 }
 
 .cart__list{
@@ -33,7 +36,7 @@
   display: flex;
   // justify-content: space-between;
   gap:10px;
-  height: 72px;
+  min-height: 72px;
   margin-top: 24px;
   box-shadow: 1px 2px 4px 0 rgba(0, 0, 0, 0.1);
   background-color: $main-onprimary;

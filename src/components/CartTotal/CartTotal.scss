@@ -122,5 +122,53 @@
   margin-top: 16px;
 }
 
+.cart__price-card{
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 1.5;
+  color: $main-onsurface;
+  margin-right: 8px;
+}
 
+.cart__price-not-card{
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.5;
+  color: $grayscale---hardest;
+  text-align: right;
+}
+
+.cart__price-container{
+  display: flex;
+  p{
+    margin: 10px 8px 10px 0;
+  }
+  span{
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.5;
+    color: $grayscale---light;  
+    margin: 0;
+  }
+}
+
+.cart__price-count{
+  padding-top: 10px;
+}
+
+.cart__item-sale{
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  color: $main-onprimary;
+  border-radius: 4px;
+  width: 53px;
+  height: 32px;
+  background-color: $main---primary;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+  margin-left: 8px;
+}
 

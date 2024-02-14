@@ -29,7 +29,8 @@ export const foodSlice = createSlice({
         existingFood.count += 1;
         existingFood.total += existingFood.price
       } else {
-        state.cart.push({ ...action.payload, count: 1, total: action.payload.price});
+        state.cart.push({ ...action.payload, count: 1, total: action.payload.price, sale: action.payload.type === 'sale' ? 50 : 0 });
+        
       }
     },
     removeToCart(state, action) {
