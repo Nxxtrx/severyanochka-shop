@@ -71,8 +71,8 @@ const CartTotal = () => {
       </div>
       <p className='total__sum-total'>Итог <span>{calculateFinalAmount()} ₽</span></p>
       <p className='total__take-bonus'><img src={smileImage} alt="" />Вы получаете <span>&nbsp;100 бонусов</span></p>
-      {calculateFinalAmount() <= 1000 && <div className='total__min-sum'>Минимальная сумма заказа 1000р</div>}
-      <button className='total__btn'>Оформить заказ</button>
+      {calculateFinalAmount() <= 999 && <div className='total__min-sum'>Минимальная сумма заказа 1000р</div>}
+      <button className='total__btn' disabled={calculateFinalAmount() <= 999}>Оформить заказ</button>
     </div>
   )
 }

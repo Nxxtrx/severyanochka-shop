@@ -20,14 +20,14 @@ const Cart = () => {
                   <p className='cart__price-card'>{item.sale > 0 ? item.price * item.sale / 100 : item.price} ₽<br /><span>С картой</span></p>
                   <p className='cart__price-not-card'>{item.price} ₽<br /><span>Обычная</span></p>
                   <span className='cart__price-count'>за шт</span>
-                  <div className='cart__item-sale'>-10%</div>
+                  <div className='cart__item-sale'>-{item.sale}%</div>
                 </div>
               :  <p className="cart__item-price">{item.price} ₽ <span>за шт.</span></p>
               }
             </div>
             <div className='cart__total-container'>
               <CartButton item={item} />
-              <p className='cart__item-total'>{item.sale > 0 ? item.total * item.sale / 100 * item.count : item.price * item.count} ₽</p>
+              <p className='cart__item-total'>{item.sale > 0 ? item.price * item.sale / 100 * item.count : item.price * item.count} ₽</p>
             </div>
           </li>
         ))}

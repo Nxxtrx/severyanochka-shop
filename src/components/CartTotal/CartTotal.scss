@@ -113,13 +113,27 @@
   font-size: 24px;
   line-height: 1.5;
   text-align: center;
-  color: $main---primary;
+  color: $main-onprimary;
   border-radius: 4px;
   padding: 16px;
-  background-color: $main-primarymuted;
+  background-color: $main---primary;
   border: none;
   width: 100%;
   margin-top: 16px;
+  cursor: pointer;
+  opacity: 1;
+  transition: opacity .2s linear;
+}
+
+.total__btn:hover{
+  opacity: .7;
+}
+
+.total__btn:disabled{
+  cursor: auto;
+  opacity: 1;
+  color: $main---primary;
+  background-color: $main-primarymuted;
 }
 
 .cart__price-card{
