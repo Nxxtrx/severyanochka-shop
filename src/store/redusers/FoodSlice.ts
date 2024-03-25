@@ -47,11 +47,10 @@ export const foodSlice = createSlice({
       }
     },
     toggleToFavorites(state, action) {
-      console.log(action.payload)
       const currentProduct = state.food.find(item => item.id === action.payload.id)
       const existingFood = state.favorites.find(item => item.id === action.payload.id)
-      console.log(currentProduct?.isLike)
       if(existingFood && currentProduct) {
+        state.favorites = state.favorites.filter(item => item.id !== action.payload.id);
       } else if(!existingFood && currentProduct){
         state.favorites.push({...action.payload, isLike: true})
       }
