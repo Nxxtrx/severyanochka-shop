@@ -2,10 +2,12 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { IFood } from "../../models/IFood";
 import { fetchFood } from "./ActionCreaters";
 import { ICart } from "../../models/ICart";
+import { IFavorites } from "../../models/IFavorites";
 
 interface FoodState {
   food: IFood[],
-  cart: ICart[]
+  cart: ICart[],
+  favorites: IFavorites[]
   isLoading: boolean,
   error: string
 }
@@ -13,6 +15,7 @@ interface FoodState {
 const initialState: FoodState = {
   food: [],
   cart: [],
+  favorites: [],
   isLoading: false,
   error: '',
 }
@@ -23,7 +26,6 @@ export const foodSlice = createSlice({
   initialState,
   reducers: {
     addToCart(state, action) {
-      // Проверяем, есть ли товар уже в корзине
       const existingFood = state.cart.find(item => item.id === action.payload.id);
       if (existingFood) {
         existingFood.count += 1;
@@ -40,11 +42,20 @@ export const foodSlice = createSlice({
           existingFood.count -= 1;
           existingFood.total -= existingFood.price
         } else {
-          // Если count равен 1, удаляем товар из корзины
           state.cart = state.cart.filter(item => item.id !== action.payload.id);
         }
       }
-    }
+    },
+    toggleToFavorites(state, action) {
+      console.log(action.payload)
+      const currentProduct = state.food.find(item => item.id === action.payload.id)
+      const existingFood = state.favorites.find(item => item.id === action.payload.id)
+      console.log(currentProduct?.isLike)
+      if(existingFood && currentProduct) {
+      } else if(!existingFood && currentProduct){
+        state.favorites.push({...action.payload, isLike: true})
+      }
+    },
   },
   extraReducers: (builder) => {
     builder
@@ -63,6 +74,6 @@ export const foodSlice = createSlice({
   },
 });
 
-export const {addToCart, removeToCart} = foodSlice.actions
+export const {addToCart, removeToCart, toggleToFavorites} = foodSlice.actions
 
 export default foodSlice.reducer;

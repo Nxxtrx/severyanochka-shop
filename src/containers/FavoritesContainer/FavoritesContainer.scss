@@ -1,0 +1,58 @@
+@import "../../utils/colors";
+@import '../../utils/mixins';
+
+.favorites{
+  max-width: 1208px;
+  margin: 0 auto 80px;
+}
+
+.favorites__title{
+  font-weight: 700;
+  font-size: 64px;
+  line-height: 1.5;
+  color: $main-onsurface;
+  margin-top: 24px;
+}
+
+.favorites__container{
+  display: flex;
+  gap: 40px;
+
+  .main-cards{
+    margin: 0;
+  }
+  
+  .main-cards__container{
+    margin: 0;
+  }
+
+  .favorites__product-container{
+    .favorites__filter-card{
+      background-color: $main-secondary;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 32px;
+      max-width: 184px;
+      border-radius: 4px;
+      margin-bottom: 40px;
+      p{
+        margin: 0 0 0 8px;
+        font-weight: 400;
+        @include fluid-text(12, 8);
+        line-height: 1.5;
+        color: $main-onprimary;
+        text-align: center;
+      }
+      button{
+        border: none;
+        background-color: inherit;
+        width: 24px;
+        height: 24px;
+        margin-right: 12px;
+        margin-bottom: 3px;
+      }
+    }
+  }
+
+}

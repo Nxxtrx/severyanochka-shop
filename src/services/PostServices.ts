@@ -13,11 +13,17 @@ export const postAPI = createApi({
           params: {
               _start: start,
               _end: end,
-              type: type
-
+              type: type,
           }
       }),
-      providesTags: result => ['Post']
+      providesTags: result => ['Post'],
+      transformResponse: (response:IFood[]) => {
+        const postsWithIsLike = response.map(post => ({
+          ...post,
+          isLike: false 
+        }));
+        return postsWithIsLike;
+      }
   }),  
   })
 })

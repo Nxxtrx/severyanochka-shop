@@ -8,6 +8,7 @@ import MainContainers from '../containers/MainContainers/MainContainers';
 import Footer from '../components/Footer/Footer';
 import { Route, Routes } from 'react-router-dom';
 import CartContainer from '../containers/CartContainer/CartContainer';
+import FavoritesContainer from '../containers/FavoritesContainer/FavoritesContainer';
 
 
 export default function App() {
@@ -40,10 +41,13 @@ export default function App() {
   return (
     <div className="page">
       <HeaderContainer />
-      <Routes >
-        <Route path='/' element={<MainContainers />}/>
-        <Route path='/cart' element={<CartContainer />}/>
-      </Routes>
+      <main className='main'>
+        <Routes >
+          <Route path='/' element={<MainContainers />}/>
+          <Route path='/cart' element={<CartContainer />}/>
+          <Route path='/favorites' element={<FavoritesContainer />} />
+        </Routes>
+      </main>
       <Footer />
     </div>
   );

@@ -12,31 +12,22 @@ import { IFood } from '../../models/IFood'
 
 
 interface CardListType {
-  title: string,
-  linkTitle: string,
+  title?: string,
+  linkTitle?: string,
   data: IFood[],
 }
 
 
 const MainCards:FunctionComponent<CardListType> = ({title, linkTitle, data}) => {
-
-  // const dispatch = useAppDispatch()
-  // const {food} = useAppSelector(state => state.foodReducer)
-  // console.log(food)
-  
-  // useEffect(() => {
-  //   dispatch(fetchFood())
-  // },[])
-
   return (
     <div className='main-cards'>
       <div className='main-cards__title-container'>
         <h2 className='main-cards__title'>{title}</h2>
-          <a className='main-cards__link' href="">{linkTitle} <img src={linkLogo} alt="" /></a>
+          {linkTitle && <a className='main-cards__link' href="">{linkTitle} <img src={linkLogo} alt="" /></a>}
       </div>
       <ul className='main-cards__container'>
         {data.map((item) => 
-          <MainCard key={item.id} cardImage={item.url} title={title} price={item.price} name={item.name} rating={item.rating} item={item}/>
+          <MainCard key={item.id} cardImage={item.url} title={item.type} price={item.price} name={item.name} rating={item.rating} item={item} isLike={item.isLike}/>
         )}
       </ul>
     </div>

@@ -36,7 +36,18 @@
   top: 8px;
   right: 8px;
   cursor: pointer;
+  opacity: 0.5;
 }
+
+.main-cards__like:hover {
+  background-color: $main-primarymuted;
+}
+
+.main-cards__like_type_active{
+  background-color: inherit;
+  opacity: 1;
+}
+
 
 .main-cards__sale{
   background-color: $main---primary;

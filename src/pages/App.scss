@@ -1,16 +1,38 @@
 
 // Colors
 @import '../utils/colors';
+@import '../utils/mixins';
 
 .page{
   font-family: "Rubik", sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
+h1,h2,h3,h4{
+  margin: 0;
+  padding: 0;
+}
+
+// h2{
+//   @include fluid-text(64, 48);
+// }
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    appearance: none;
+    margin: 0;
+}
+
+a, button {
+  cursor: pointer;
+}
 
 main{
   background-color: $main---bgpage;
-  padding-top: 4px;
-  min-height: calc(100vh - 76px - 126px);
+  flex: 1 0 auto;
 }
 
 

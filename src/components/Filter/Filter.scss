@@ -1,0 +1,103 @@
+@import '../../utils/_colors.scss';
+@import '../../utils/mixins';
+
+.filter {
+  min-width: 272px;
+  &__title-container {
+    background-color: $grayscale---lightest;
+    border-radius: 4px;
+    height: 44px;
+  }
+  &__title {
+    margin: 0;
+    @include fluid-text(16, 12);
+    line-height: 1.5;
+    padding-top: 10px;
+    padding-left: 10px;
+    color: $main-onsurface;
+    font-weight: 700;
+  }
+  &__price-container{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+    span{
+      @include fluid-text(16, 12);
+      line-height: 1.5;
+      color: #000;
+    }
+    .filter__reset{
+      @include fluid-text(12, 8);
+      font-weight: 400;
+      line-height: 1.5;
+      color: $grayscale---hardest;
+      border: none;
+      background-color: $grayscale---lightest;
+      padding: 4px 8px;
+    }
+  }
+  &__input-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 13px;
+    margin-bottom: 13px;
+    .filter__input{
+      box-sizing: border-box;
+      padding: 8px 16px;
+      margin: 0;
+      width: 124px;
+      height: 40px; 
+      @include fluid-text(16, 12);
+      line-height: 1.75;
+      border: 1px solid $grayscale---light;
+      border-radius: 4px;   
+    }
+    .filter__input:focus{
+      outline-color: $main-secondary;
+    }
+    hr{
+      margin: 0;
+      width: 16px;
+    }
+  }
+
+  &__btn-submit{
+    border-radius: 4px;
+    width: 272px;
+    height: 40px;
+    background: $main---primary;
+    border: none;
+    margin-top: 40px;
+    font-weight: 400;
+    @include fluid-text(16, 12);
+    line-height: 1.5;
+    color: $main-onprimary;
+  }
+ 
+}
+
+
+
+.MuiSlider-thumb{
+  color: $main-secondary;
+  transition: none;
+  box-shadow: 2px 4px 8px 0 rgba(112, 192, 91, 0.2);
+  border: 1px solid $main-onprimary;
+  &:focus, &:hover, &.Mui-active, &.Mui-focusVisible {
+    box-shadow: none !important;
+    transition: none !important;
+  }
+
+  &::before {
+    display: none,
+  }
+}
+
+.MuiSlider-track{
+  color: $main-secondary;
+}
+
+.MuiSlider-rail{
+  color: #e2e1e0;
+}

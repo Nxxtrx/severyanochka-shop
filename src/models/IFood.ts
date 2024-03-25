@@ -4,5 +4,6 @@ export interface IFood {
   name: string,
   url: string,
   price: number,
-  rating: number
+  rating: number,
+  isLike: boolean
 }

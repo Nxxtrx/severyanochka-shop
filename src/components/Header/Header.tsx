@@ -21,7 +21,7 @@ const Header:FunctionComponent<HeaderProps> = ({children}):JSX.Element => {
 
   const {childrenOne, childrenTwo} = children
 
-  const [isOpened, setIsOpened] = React.useState(false)
+  const [isOpened, setIsOpened] = React.useState<boolean>(false)
 
   const cartArray = useAppSelector(state => state.foodReducer.cart)
 
@@ -41,7 +41,7 @@ const Header:FunctionComponent<HeaderProps> = ({children}):JSX.Element => {
         <ul className="menu__list">
           <li className="menu__item">
             <img className="menu__image" src={likeImage} alt="" />
-            <p className="menu__text">Избранное</p>
+            <Link to='/favorites' className="menu__text">Избранное</Link>
           </li>
           <li className="menu__item">
             <img className="menu__image" src={orderImage} alt="" />
