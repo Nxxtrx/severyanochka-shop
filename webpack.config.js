@@ -18,7 +18,7 @@ module.exports = {
     rules: [
       {
         test: /\.(scss|sass|less|css)$/,
-        use: ["style-loader", "css-loader", "sass-loader"],
+        use: ['style-loader', 'css-loader', 'sass-loader'],
       },
       {
         test: /\.(ts|tsx)$/,
@@ -26,8 +26,27 @@ module.exports = {
         exclude: /node_modules/,
       },
       {
-        test: /\.(png|svg|jpg|jpeg|gif|woff|ttf)$/i,
+        test: /\.(png|jpg|jpeg|gif|woff|ttf)$/i,
         type: 'asset/resource',
+      },
+      {
+        test: /\.svg$/,
+        issuer: /\.[jt]sx?$/,
+        use: [
+          {
+            loader: '@svgr/webpack',
+            options: {
+              icon: true,
+            },
+          },
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+              outputPath: 'images/',
+            },
+          },
+        ],
       },
     ],
   },

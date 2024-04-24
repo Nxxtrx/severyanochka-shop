@@ -1,4 +1,3 @@
-import { IFood } from "./IFood"
+import { IFood } from './IFood';
 
-export interface IFavorites extends IFood {
-}
+export interface IFavorites extends IFood {}

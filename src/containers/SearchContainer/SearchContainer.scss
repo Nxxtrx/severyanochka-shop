@@ -1,0 +1,28 @@
+@import "../../utils/colors";
+@import '../../utils/mixins';
+
+.search-container{
+  max-width: 1208px;
+  margin: 0 auto;
+  &__title{
+    @include fluid-text(36, 24);
+    font-weight: 700;
+    line-height: 1.5;
+    margin-top: 80px;
+    color: $main-onsurface;
+  }
+  &__query{
+    @include fluid-text(24, 18);
+    line-height: 1.5;
+    font-weight: 400;
+    color: $main-onsurface;
+    margin-top: 24px;
+    margin-bottom: 0;
+    span{
+      color: $main---primary;
+    }
+  }
+  .main-cards{
+    margin-top: 0px;
+  }
+}

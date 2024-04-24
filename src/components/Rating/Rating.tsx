@@ -1,16 +1,22 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import Rating from '@mui/material/Rating';
-import Typography from '@mui/material/Typography';
 
-export default function BasicRating({ defaultValue }: { defaultValue: number }) {
+interface BasicRatingProps {
+  defaultValue: number;
+}
+
+const BasicRating: React.FC<BasicRatingProps> = ({ defaultValue }) => {
   const [value, setValue] = React.useState<number | null>(defaultValue);
   const [readOnly, setReadOnly] = React.useState<boolean>(false);
 
-  const handleRatingChange = (event: React.ChangeEvent<{}>, newValue: number | null) => {
+  const handleRatingChange = (
+    event: React.SyntheticEvent<Element, Event>,
+    newValue: number | null,
+  ): void => {
     setValue(newValue);
     if (newValue !== null) {
-      setReadOnly(true); 
+      setReadOnly(true);
     }
   };
 
@@ -18,8 +24,7 @@ export default function BasicRating({ defaultValue }: { defaultValue: number }) 
     <Box
       sx={{
         '& > legend': { mt: 2 },
-      }}
-    >
+      }}>
       <Rating
         name="simple-controlled"
         value={value}
@@ -28,4 +33,6 @@ export default function BasicRating({ defaultValue }: { defaultValue: number }) 
       />
     </Box>
   );
-}
+};
+
+export default BasicRating;

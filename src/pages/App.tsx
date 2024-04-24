@@ -1,18 +1,18 @@
-import React from 'react'
+import type { FC } from 'react';
+import React from 'react';
+import { Route, Routes } from 'react-router-dom';
 import anime from 'animejs/lib/anime.es.js';
 import HeaderContainer from '../containers/HeaderContainer/HeaderContainer';
-import '../utils/fonts/fonts.css'
-import '../utils/normalize.css'
-import './App.scss'
 import MainContainers from '../containers/MainContainers/MainContainers';
-import Footer from '../components/Footer/Footer';
-import { Route, Routes } from 'react-router-dom';
 import CartContainer from '../containers/CartContainer/CartContainer';
 import FavoritesContainer from '../containers/FavoritesContainer/FavoritesContainer';
+import SearchContainer from '../containers/SearchContainer/SearchContainer';
+import Footer from '../components/Footer/Footer';
+import '../utils/fonts/fonts.css';
+import '../utils/normalize.css';
+import './App.scss';
 
-
-export default function App() {
-
+const App: FC = () => {
   React.useEffect(() => {
     anime({
       targets: '.main-banner',
@@ -30,25 +30,27 @@ export default function App() {
       fillOpacity: {
         value: [0, 1],
         duration: 2000,
-        delay: 1000, 
+        delay: 1000,
       },
       direction: 'alternate',
-      loop: true
+      loop: true,
     });
-    
   }, []);
 
   return (
     <div className="page">
       <HeaderContainer />
-      <main className='main'>
-        <Routes >
-          <Route path='/' element={<MainContainers />}/>
-          <Route path='/cart' element={<CartContainer />}/>
-          <Route path='/favorites' element={<FavoritesContainer />} />
+      <main className="main">
+        <Routes>
+          <Route path="/" element={<MainContainers />} />
+          <Route path="/cart" element={<CartContainer />} />
+          <Route path="/favorites" element={<FavoritesContainer />} />
+          <Route path="/search" element={<SearchContainer />} />
         </Routes>
       </main>
       <Footer />
     </div>
   );
-}
+};
+
+export default App;

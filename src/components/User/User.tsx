@@ -1,8 +1,8 @@
-import React from 'react'
-import avatarImage from '../../images/header-avatar.png'
-import userSettingImage from '../../images/user-setting.svg'
+import React from 'react';
+import avatarImage from '../../images/header-avatar.png';
+import userSettingImage from '../../images/user-setting.svg';
 
-const User = () => {
+const User: React.FC = () => {
   return (
     <div className="user">
       <img className="user__image" src={avatarImage} alt="" />
@@ -12,6 +12,6 @@ const User = () => {
       </button>
     </div>
   );
-}
+};
 
-export default User
+export default User;

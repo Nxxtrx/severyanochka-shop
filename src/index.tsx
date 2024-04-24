@@ -2,22 +2,19 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './pages/App';
 import { Provider } from 'react-redux';
-import { store as setupStore } from './store/store';
+import { store } from './store/store';
 import { BrowserRouter } from 'react-router-dom';
 
-
-const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
-);
-
-const store = setupStore()
+const rootElement = document.getElementById('root');
+if (rootElement == null) throw new Error('Failed to find the root element');
+const root = ReactDOM.createRoot(rootElement);
 
 root.render(
   <React.StrictMode>
-    <BrowserRouter >
+    <BrowserRouter>
       <Provider store={store}>
         <App />
       </Provider>
     </BrowserRouter>
-  </React.StrictMode>
+  </React.StrictMode>,
 );

@@ -18,6 +18,18 @@
   justify-content: space-between;
 }
 
+.header__logo {
+  animation: wink 2s infinite;
+}
+
+@keyframes wink {
+  0%, 50% {
+    fill: #FF6633; /* Цвет глаза до подмигивания */
+  }
+  25%, 75% {
+    fill: #414141; /* Цвет глаза после подмигивания */
+  }
+}
 
 .catalog{
   background-color: $main-secondary;
@@ -81,6 +93,10 @@
   margin-right: 8px;
 }
 
+.MuiBadge-colorSuccess {
+  background-color: #f63 !important;
+}
+
 .menu__list{
   display: flex;
   justify-content: space-between;
@@ -108,6 +124,14 @@
   margin-top: 8px;
   text-decoration: none;
   color: #000;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.menu__text_type_active{
+  color: #f63;
 }
 
 .user{
