@@ -1,0 +1,100 @@
+@import '../../utils/colors';
+
+.auth-container {
+  background-color: #FCD5BA;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+
+
+
+  &__overlay{
+    max-width: 686px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    background-color: #fff;
+    padding: 72px 68px;
+  }
+
+  &__title {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 1.5;
+    color: $main-onsurface;
+  }
+
+  &__btn-submit {
+    background-color: $main-primarymuted;
+    border-radius: 4px;
+    padding: 16px;
+    box-sizing: border-box;
+    border: none;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 1.5;
+    color: $main---primary;
+    margin-top: 40px;
+  }
+
+  &__toggle-btn {
+    background-color: inherit;
+    border: 1px solid $main-secondary;
+    border-radius: 4px;
+    width: 121px;
+    height: 32px;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.5;
+    color: $main-secondary;
+  }
+}
+
+.auth {
+  display: flex;
+  flex-direction: column;
+  max-width: 552px;
+  gap: 16px;
+
+  &__label {
+    display: block;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.5;
+    color: $grayscale---hard;
+    position: relative;
+  }
+
+  &__input {
+    width: 100%;
+    background: $main-onprimary;
+    border: 1px solid $grayscale---light;
+    border-radius: 4px;
+    padding: 0 16px;
+    height: 40px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 40px;
+    color: $main-onsurface;
+    box-sizing: border-box;
+    
+
+    &:focus {
+      outline: none;
+      box-shadow: 4px 8px 16px 0 rgba(112, 192, 91, 0.2);
+      border-color: $main-secondary;
+    }
+  }
+
+  &__show-password-btn{
+    background-color: inherit;
+    border: none;
+    position: absolute;
+    top: 50%;
+    right: 6.5px;
+  }
+
+}

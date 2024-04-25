@@ -1,19 +1,46 @@
 import React, { FC } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
+import './AuthContainer.scss';
 
 interface AuthContainerProps {
   children?: React.ReactNode;
+  title: string;
 }
 
-const AuthContainer: FC<AuthContainerProps> = ({ children }) => {
+const AuthContainer: FC<AuthContainerProps> = ({ children, title }) => {
+  const location = useLocation();
+  const navigate = useNavigate();
+  const toggleButton = (): React.JSX.Element => {
+    if (location.pathname === '/login') {
+      return (
+        <button
+          className="auth-container__toggle-btn"
+          onClick={() => {
+            navigate('/registration');
+          }}>
+          Регистрация
+        </button>
+      );
+    } else {
+      return (
+        <button
+          className="auth-container__toggle-btn"
+          onClick={() => {
+            navigate('/login');
+          }}>
+          Вход
+        </button>
+      );
+    }
+  };
+
   return (
     <section className="auth-container">
-      <h2 className="auth-container__title">Регистрация</h2>
-      <form className="auth-container__form">
+      <div className="auth-container__overlay">
+        <h2 className="auth-container__title">{title}</h2>
         {children}
-        <button type="submit" className="auth-container__btn-submit">
-          Зарегистрироваться
-        </button>
-      </form>
+        {toggleButton()}
+      </div>
     </section>
   );
 };
