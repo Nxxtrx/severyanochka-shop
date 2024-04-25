@@ -65,6 +65,8 @@ module.exports = {
       // overlay: true,
     }),
     new CleanWebpackPlugin(),
-    new Dotenv(),
+    new Dotenv({
+      systemvars: true,
+    }),
   ],
 };
