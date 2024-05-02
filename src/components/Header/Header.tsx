@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Badge } from '@mui/material';
 import { useAppSelector } from '../../hooks/redux';
@@ -30,13 +30,6 @@ const Header: FC<HeaderProps> = ({ children }) => {
   const totalItemsInCart = cartArray.reduce((total, currentItem) => total + currentItem.count, 0);
 
   const logoRef = useRef<HTMLImageElement>(null);
-
-  useEffect(() => {
-    if (logoRef.current != null) {
-      const lastPath = logoRef.current.querySelector('.ss');
-      console.log(lastPath); // Здесь будет последний элемент path
-    }
-  }, [logoRef]);
 
   const orderLogoAnimate = (): void => {
     anime({

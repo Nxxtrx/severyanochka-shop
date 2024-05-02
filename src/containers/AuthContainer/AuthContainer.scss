@@ -28,7 +28,7 @@
   }
 
   &__btn-submit {
-    background-color: $main-primarymuted;
+    background-color: $main---primary;
     border-radius: 4px;
     padding: 16px;
     box-sizing: border-box;
@@ -36,10 +36,25 @@
     font-weight: 400;
     font-size: 24px;
     line-height: 1.5;
-    color: $main---primary;
+    color: $main-onprimary;
     margin-top: 40px;
+    box-shadow: none;
+    transition: box-shadow .2s ease;
+
+    &:hover {
+      box-shadow: 4px 8px 16px 0 rgba(255, 102, 51, 0.2);
+    }
   }
 
+  &__btn-submit_type_active{
+    background-color: $main-primarymuted;
+    color: $main---primary;
+    cursor: auto;
+    &:hover {
+      box-shadow: none;
+    }
+  }
+  
   &__toggle-btn {
     background-color: inherit;
     border: 1px solid $main-secondary;
@@ -50,6 +65,14 @@
     font-size: 12px;
     line-height: 1.5;
     color: $main-secondary;
+    
+    &:hover {
+      box-shadow: 4px 8px 16px 0 rgba(112, 192, 91, 0.2);
+    }
+  }
+  &__back-btn {
+    margin-left: auto;
+    margin-right: 0;
   }
 }
 
@@ -96,5 +119,6 @@
     top: 50%;
     right: 6.5px;
   }
+
 
 }

@@ -140,13 +140,21 @@
   width: 217px;
 }
 
-.user__image{
+.user__image {
+  position: relative;
   width: 40px;
   height: 40px;
   object-fit: contain;
   border-radius: 100px;
   margin-left: 16px;
   margin-right: 10px;
+  filter: none;
+  transition: filter 0.3s ease; /* Плавное изменение прозрачности */
+  cursor: pointer;
+}
+
+.user__image:hover {
+  filter: brightness(70%);
 }
 
 .user__name{

@@ -1,30 +1,21 @@
-import React, { FC, FormEvent, useState } from 'react';
+import React, { FC, FormEvent, useEffect, useState } from 'react';
 import showPasswordIcon from '../../images/auth-show-password.svg';
 import { auth, db } from '../../config/firebase';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { setDoc, doc } from 'firebase/firestore';
-
-interface User {
-  email: string;
-  password: string;
-  firstName: string;
-  lastName: string;
-  phone: string;
-  repeatPassword: string;
-}
+import { useFormAndValidation } from '../../hooks/useValidation';
+import ErrorsInput from '../ErrorsInput/ErrorsInput';
+import InputMask from 'react-input-mask';
 
 const Registration: FC = () => {
-  const [user, setUser] = useState<User>({
-    email: '',
-    password: '',
-    firstName: '',
-    lastName: '',
-    phone: '',
-    repeatPassword: '',
-  });
-
+  const { values, errors, isValid, handleChange, setIsValid, resetForm } = useFormAndValidation();
+  const { email, password, firstName, lastName, phone, repeatPassword } = values;
   const [showPassword, setShowPassword] = useState(false);
   const [showRepeatPassword, setShowRepeatPassword] = useState(false);
+
+  useEffect(() => {
+    setIsValid(false);
+  }, []);
 
   const togglePasswordVisibility = (inputNumber: number): void => {
     if (inputNumber === 1) {
@@ -38,71 +29,100 @@ const Registration: FC = () => {
     e.preventDefault();
     void (async () => {
       try {
-        await createUserWithEmailAndPassword(auth, user.email, user.password);
+        await createUserWithEmailAndPassword(auth, email, password);
         if (auth.currentUser != null) {
           await setDoc(doc(db, 'Users', auth.currentUser.uid), {
-            email: user.email,
-            firstName: user.firstName,
-            lastName: user.lastName,
-            phone: user.phone,
+            email: email,
+            firstName: firstName,
+            lastName: lastName ?? null,
+            phone: phone ?? null,
+            avatarUrl: null,
           });
         }
       } catch (err) {
         console.error(err);
       }
     })();
+    resetForm();
   };
 
   return (
     <form className="auth auth__form" onSubmit={handleSubmit}>
       <label className="auth__label">
         Телефон
-        <input
+        <InputMask
+          mask="+7 (999) 999-99-99"
+          placeholder="+7 (___) ___-__-__"
           className="auth__input"
-          type="number"
-          onChange={e => {
-            setUser({ ...user, phone: e.target.value });
-          }}
+          type="phone"
+          name="phone"
+          value={phone !== '' ? phone : ''}
+          onChange={handleChange}
         />
+        {errors.phone !== undefined && errors.phone !== '' ? (
+          <ErrorsInput errorText={errors.phone} />
+        ) : (
+          ''
+        )}
       </label>
       <label className="auth__label">
         Фамилия
         <input
           className="auth__input"
           type="text"
-          onChange={e => {
-            setUser({ ...user, lastName: e.target.value });
-          }}
+          name="lastName"
+          maxLength={32}
+          value={lastName !== '' ? lastName : ''}
+          onChange={handleChange}
         />
       </label>
       <label className="auth__label">
-        Имя
+        Имя *
         <input
           className="auth__input"
           type="text"
-          onChange={e => {
-            setUser({ ...user, firstName: e.target.value });
-          }}
+          name="firstName"
+          minLength={2}
+          maxLength={32}
+          value={firstName !== '' ? firstName : ''}
+          onChange={handleChange}
+          required
         />
+        {errors.firstName !== undefined && errors.firstName !== '' ? (
+          <ErrorsInput errorText={errors.firstName} />
+        ) : (
+          ''
+        )}
       </label>
       <label className="auth__label">
-        E-mail
+        E-mail *
         <input
           className="auth__input"
           type="email"
-          onChange={e => {
-            setUser({ ...user, email: e.target.value });
-          }}
+          name="email"
+          minLength={4}
+          maxLength={52}
+          value={email !== '' ? email : ''}
+          onChange={handleChange}
+          required
         />
+        {errors.email !== undefined && errors.email !== '' ? (
+          <ErrorsInput errorText={errors.email} />
+        ) : (
+          ''
+        )}
       </label>
       <label className="auth__label">
-        Пароль
+        Пароль *
         <input
           className="auth__input"
           type={`${showPassword ? 'text' : 'password'}`}
-          onChange={e => {
-            setUser({ ...user, password: e.target.value });
-          }}
+          name="password"
+          minLength={6}
+          maxLength={52}
+          value={password !== '' ? password : ''}
+          onChange={handleChange}
+          required
         />
         <button
           type="button"
@@ -112,15 +132,23 @@ const Registration: FC = () => {
           }}>
           <img src={showPasswordIcon} alt="" />
         </button>
+        {errors.password !== undefined && errors.password !== '' ? (
+          <ErrorsInput errorText={errors.password} />
+        ) : (
+          ''
+        )}
       </label>
       <label className="auth__label">
-        Повторите пароль
+        Повторите пароль *
         <input
           className="auth__input"
           type={`${showRepeatPassword ? 'text' : 'password'}`}
-          onChange={e => {
-            setUser({ ...user, repeatPassword: e.target.value });
-          }}
+          name="repeatPassword"
+          minLength={5}
+          maxLength={52}
+          value={repeatPassword !== '' ? repeatPassword : ''}
+          onChange={handleChange}
+          required
         />
         <button
           type="button"
@@ -130,8 +158,16 @@ const Registration: FC = () => {
           }}>
           <img src={showPasswordIcon} alt="" />
         </button>
+        {errors.repeatPassword !== undefined && errors.repeatPassword !== '' ? (
+          <ErrorsInput errorText={errors.repeatPassword} />
+        ) : (
+          ''
+        )}
       </label>
-      <button type="submit" className="auth-container__btn-submit">
+      <button
+        type="submit"
+        disabled={!isValid}
+        className={`auth-container__btn-submit ${!isValid && 'auth-container__btn-submit_type_active'}`}>
         Зарегистрироваться
       </button>
     </form>

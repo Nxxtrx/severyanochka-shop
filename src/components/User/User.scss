@@ -1,13 +1,11 @@
+@import '../../utils/colors';
+
 .user {
   position: relative;
   box-shadow: none;
   transition: box-shadow 2s ease;
   display: flex;
   justify-content: space-between;
-
-  // &_type_active{
-  //   box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
-  // }
 
   &__name{
     margin-right: auto;
@@ -47,4 +45,25 @@
     background-color: inherit;
     height: 48px;
   }
+
+  &__signing-btn {
+    background-color: $main---primary;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    gap: 38px;
+    padding: 8px;
+    padding-left: 38px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.5;
+    color: $main-onprimary;
+    box-shadow: none;
+    transition: box-shadow .2s ease;
+
+    &:hover {
+      box-shadow: 4px 8px 16px 0 rgba(255, 102, 51, 0.2);
+    }
+  }
+
 }

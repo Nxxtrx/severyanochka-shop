@@ -1,0 +1,38 @@
+@import '../../utils/colors';
+
+.error {
+  position: absolute;
+  background-color: red;
+  border-radius: 5px;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  bottom: 0px;
+  left: calc(100% + 20px);
+  box-sizing: border-box;
+  max-height: 40px;
+
+  &__text {
+    font-size: 10px;
+    line-height: 1.71429;
+    text-align: center;
+    color: $pallete-onerror;
+    white-space: nowrap;
+  }
+  img {
+    width: 15px;
+  }
+}
+
+.error::after {
+  content: '';
+  position: absolute;
+  left: -13px; 
+  top: 50%;
+  transform: translateY(-50%) rotate(90deg);
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid red;
+  z-index: 2;
+}
